@@ -1,14 +1,19 @@
-import React from 'react';
+import React from 'react'; 
 import styles from './SearchBox.module.css';
 
 const SearchBox = ({ filter, onChange }) => (
-  <input
-    type="text"
-    value={filter}
-    onChange={onChange}
-    placeholder="Search contacts"
-    className={styles.searchBox}
-  />
+  <div className={styles.searchBoxContainer}>
+    <label className={styles.label}>Find contacts by name</label>
+    <input
+      type="text"
+      value={filter}
+      onChange={onChange}
+      className={styles.searchBox}
+    />
+  </div>
 );
 
 export default SearchBox;
+
+
+

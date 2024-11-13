@@ -3,9 +3,10 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './ContactForm.module.css';
 
+// Схема валідації з Yup
 const ContactFormSchema = Yup.object().shape({
-  name: Yup.string().min(3).max(50).required('Required'),
-  number: Yup.string().min(3).max(50).required('Required'),
+  name: Yup.string().min(3, 'Must be at least 3 characters').max(50, 'Must be 50 characters or less').required(' '),
+  number: Yup.string().min(3, 'Must be at least 3 characters').max(50, 'Must be 50 characters or less').required(' '),
 });
 
 const ContactForm = ({ onSubmit }) => {
@@ -36,3 +37,5 @@ const ContactForm = ({ onSubmit }) => {
 };
 
 export default ContactForm;
+
+
